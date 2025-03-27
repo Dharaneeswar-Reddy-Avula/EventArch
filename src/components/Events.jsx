@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import EventRegistrationForm from "../components/EventReg";
+import EventCard from "./EventCard";
+import EventRegistrationForm from "./EventReg";
 import { ToastContainer } from "react-toastify";
-import EventCard from "../components/EventCard";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 const Events = () => {
   const API_URL = "http://localhost:5000/api";
   const [events, setEvents] = useState([]);
@@ -36,20 +35,17 @@ const Events = () => {
   }, []);
 
   return (
-    <div>
-    <div>        <Navbar/>
-</div>
     <div className="flex justify-center flex-col items-center">
       {/* Move ToastContainer here so it stays in the DOM */}
       <ToastContainer />
       
-      <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px]  mt-[50px]">
+      <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px]">
         Upcoming Events
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-4 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 justify-center">
         {events.length > 0 ? (
-          events.map((event) => (
+          events.slice(0, 4).map((event) => (
             <EventCard
               key={event._id}
               id={event._id}
@@ -78,10 +74,6 @@ const Events = () => {
           </div>
         )}
       </div>
-    </div>
-    <div>
-    <Footer/>
-  </div>
     </div>
   );
 };

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify"; 
-import Workshopcard from "../components/Workshopcard";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Workshopcard from "./Workshopcard";
 const Workshops = () => {
     const API_URL = "http://localhost:5000/api"; 
     const [events, setEvents] = useState([]);
@@ -23,15 +21,13 @@ const Workshops = () => {
     }, []);
   
   return (
-    <div>
-      <div><Navbar/></div>
     <div className="flex flex-col items-center">
-    <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px] mt-[50px]">
+    <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px]">
       Upcoming Workshops
     </h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 w-fit mx-auto justify-items-center">
       {events.length > 0 ? (
-        events.map((event) => (
+        events.slice(0, 4).map((event) => (
           <Workshopcard
             key={event._id}
             id={event._id}
@@ -61,10 +57,6 @@ const Workshops = () => {
         </div>
       )}
     </div>
-  </div>
-  <div>
-    <Footer/>
-  </div>
   </div>
   
   )

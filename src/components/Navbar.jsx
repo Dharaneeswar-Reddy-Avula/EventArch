@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import logo from "../assets/logoe.png"
 import { FaCircleUser } from "react-icons/fa6";
-
+import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate()
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -22,35 +23,35 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           <div className="relative group">
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
+            <Link to='/' className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
               <span>Home</span>
              
-            </a>
+            </Link>
           </div>
-          <a href="#" className="hover:text-purple-400 font-semibold">
+          <Link to="/about" className="hover:text-purple-400 font-semibold">
             About Us
-          </a>
+          </Link>
           <div className="relative group">
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
+            <Link to="/events" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
               <span>Events</span>
-            </a>
+            </Link>
           </div>
           <div className="relative group">
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
+            <Link to='/workshops' className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
               <span>Workshops</span>
              
-            </a>
+            </Link>
           </div>
        
           <div className="relative group">
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
+            <Link to="/support" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
               <span>Support</span>
               
-            </a>
+            </Link>
           </div>
-          <a href="#" className="hover:text-purple-400 font-semibold">
+          <Link to="/contact" className="hover:text-purple-400 font-semibold">
             Contact Us
-          </a>
+          </Link>
           
         </div>
         <div className="flex gap-[30px]">

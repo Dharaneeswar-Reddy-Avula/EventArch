@@ -1,9 +1,8 @@
 import React from 'react'
-import WebTeam from '../components/Teamcard'
 import Footer from '../components/Footer'
-import Events from './Events'
-import Workshops from './Workshops'
 import About from './About'
+import Workshops from '../components/Workshops'
+import Events from '../components/Events'
 import Navbar from '../components/Navbar'
 const Home = () => {
   return (
@@ -11,7 +10,7 @@ const Home = () => {
       <Navbar/>
       <Workshops/>
       <Events/>
-        <WebTeam/>
+       
         <Footer/>
     </div>
   )
