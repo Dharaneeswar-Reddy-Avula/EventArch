@@ -8,8 +8,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
        body{
-            background-color: rgb(36, 36, 161);
+            background-color:rgb(30, 30, 119);
         }
+        .accordion-item {
+            background-color:rgb(15, 15, 73);/* Light gray background */
+            overflow: hidden;
+        }
+        .accordion-button {
+            background-color:rgb(15, 15, 73); ; /* Blue header */
+            color: white;
+        }
+        .accordion-button:not(.collapsed) {
+    background-color: rgb(15, 15, 73)!important; /* Darker blue when opened */
+    color: white !important;
+    box-shadow: none; /* Remove default Bootstrap shadow */
+}
+
+
     </style>
 </head>
 <body>
@@ -19,7 +34,7 @@
             <!-- First Item -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-dark fs-4" type="button" data-bs-toggle="collapse" 
+                    <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         What types of events are available on this website?
                     </button>
@@ -34,13 +49,13 @@
             <!-- Second Item -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-dark fs-4" type="button" data-bs-toggle="collapse" 
+                    <button class="accordion-button collapsed  fs-4" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         I’m facing issues while registering. What should I do?
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body text-secondary fs-5">
+                    <div class="accordion-body text-muted fs-5">
                         If you encounter any technical issues, try refreshing the page or using a different browser. If the problem persists, contact our support team for assistance.
                     </div>
                 </div>
@@ -49,7 +64,7 @@
             <!-- Third Item -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-dark fs-4" type="button" data-bs-toggle="collapse" 
+                    <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Can I get event reminders?
                     </button>
@@ -63,7 +78,7 @@
             <br>
            <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-dark fs-4" type="button" data-bs-toggle="collapse" 
+                    <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Are there any age restrictions for events?
                     </button>
