@@ -61,8 +61,11 @@ const WebTeam = () => {
   );
   return (
     <div className="flex flex-col justify-center items-center ">
-      <h2 className=" text-5xl text-center py-[30px] font-bold text-[#b806a3]">Meet Our Team</h2>
-     
+  <div className="flex justify-center">
+      <h3 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+  Meet Our Team
+</h3>
+</div>     
 
       {/* <h2 className="text-[#172554] text-3xl text-center py-[30px] font-bold">WEB TEAM</h2> */}
       <div>

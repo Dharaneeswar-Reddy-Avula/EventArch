@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@popperjs/core": "^2.11.8",
     "@shadcn/ui": "^0.0.4",
     "aceternity-ui": "^0.2.2",
     "axios": "^1.8.4",
+    "bootstrap": "^5.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

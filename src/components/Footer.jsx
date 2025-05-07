@@ -9,8 +9,9 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer-container">
+    <footer className="p-[20px] md:p-[50px]">
+      <div className="footer-container md:p-[20px] ">  
+
         <div className="footer-section about">
           <div
             style={{
@@ -161,7 +162,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="footer-bottom">
+      <div className="footer-bottom md:p-[20px_30px] md:m-[-20px_60px_0px_60px] flex flex-col md:flex-row">
         <p>Copyright © 2025 CreativeAI. All Rights Reserved</p>
         <div className="policy-links">
           <a href="#"  className="flex gap-[10px] items-center">

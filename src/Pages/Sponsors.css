@@ -1,0 +1,84 @@
+.sponsors-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+ 
+  
+  .section-title {
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(143, 31, 31);
+    margin: 30px 0;
+    text-transform: capitalize;
+  }
+  
+  .sponsor-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px auto;
+    max-width: 1400px;
+  }
+  
+  .sponsor-card {
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .sponsor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+ 
+  
+  .sponsor-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .sponsor-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  }
+  
+  .sponsor-company {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: orange;
+    text-shadow: 0 0 10px yellow, 0 0 20px red;
+  }
+  
+  .sponsor-title {
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 0 5px black;
+  }
+  
+ 

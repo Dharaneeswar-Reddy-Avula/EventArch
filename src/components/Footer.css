@@ -9,7 +9,6 @@
 footer {
   background-color: #12122d;
   color: white;
-  padding: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -22,7 +21,6 @@ footer {
   max-width: 1200px;
   margin: auto;
   flex-wrap: wrap;
-  padding: 20px;
   background: rgba(255, 255, 255, 0.068);
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -88,8 +86,7 @@ text-align: center;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 20px 30px;
-margin:-20px 60px 0px 60px ;
+
 z-index: 20;
 border-radius:10px;
 background-color: #12122d;

@@ -7,7 +7,7 @@ import EventCard from "../components/EventCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 const Events = () => {
-  const API_URL = "http://localhost:5000/api";
+  const API_URL = "https://eventarch-backend.onrender.com/api";
   const [events, setEvents] = useState([]);
   const [success, setSuccess] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,9 +43,11 @@ const Events = () => {
       {/* Move ToastContainer here so it stays in the DOM */}
       <ToastContainer />
       
-      <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px]  mt-[50px]">
-        Upcoming Events
-      </h3>
+      <div className="flex justify-center">
+      <h3 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+  Upcoming Events
+</h3>
+</div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-4 justify-center">
         {events.length > 0 ? (

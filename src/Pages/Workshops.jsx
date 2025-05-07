@@ -5,7 +5,7 @@ import Workshopcard from "../components/Workshopcard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 const Workshops = () => {
-    const API_URL = "http://localhost:5000/api"; 
+    const API_URL = "https://eventarch-backend.onrender.com/api"; 
     const [events, setEvents] = useState([]);
   const [isModalOpen,setIsModalOpen]=useState(false)
     const fetchEvents = async () => {
@@ -26,9 +26,11 @@ const Workshops = () => {
     <div>
       <div><Navbar/></div>
     <div className="flex flex-col items-center">
-    <h3 className="text-5xl text-[#b806a3] text-center font-bold pt-[50px] mt-[50px]">
-      Upcoming Workshops
-    </h3>
+    <div className="flex justify-center">
+      <h1 className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] mb-[50px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+  Upcoming Workshops 
+</h1>
+</div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 w-fit mx-auto justify-items-center">
       {events.length > 0 ? (
         events.map((event) => (

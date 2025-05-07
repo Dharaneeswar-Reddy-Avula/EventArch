@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           {/* Placeholder for the logo icon (you can replace with an actual image) */}
           <img src={logo} className="h-16 w-15"/>
-          <h3 className="text-3xl font-semibold">Event <span className="text-pink-600">Architects</span></h3>
+          <h3 className="text-3xl font-semibold hidden md:block">Event <span className="text-pink-600">Architects</span></h3>
         </div>
 
         {/* Desktop Menu */}
@@ -44,8 +44,8 @@ const Navbar = () => {
           </div>
        
           <div className="relative group">
-            <Link to="/support" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
-              <span>Support</span>
+            <Link to="/sponsors" className="flex items-center space-x-1 hover:text-purple-400 font-semibold">
+              <span>Sponsors</span>
               
             </Link>
           </div>
@@ -55,14 +55,14 @@ const Navbar = () => {
           
         </div>
         <div className="flex gap-[30px]">
-        <div className="px-4 py-2 rounded-lg  text-white backdrop-blur-xl bg-opacity-30 saturate-200 flex items-center text-md font-semibold">
+        <div className="px-4 py-2 rounded-lg hidden  text-white backdrop-blur-xl bg-opacity-30 saturate-200 md:flex items-center text-md font-semibold">
   Login
 </div>
 
-<div className="px-4 py-2 rounded-lg text-white backdrop-blur-xl bg-opacity-30 saturate-200 flex items-center text-md font-semibold">
+<div className="px-4 py-2 rounded-lg text-white backdrop-blur-xl bg-opacity-30 saturate-200 hidden md:flex items-center text-md font-semibold">
 Register
                 </div>
-            <div className="user mt-2">
+            <div className="user mt-2 hidden md:block">
             <FaCircleUser className="text-2xl"/>
             </div>
         </div>
@@ -91,39 +91,31 @@ Register
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden mt-4">
-          <div className="flex flex-col space-y-4items-center">
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400">
+          <div className="flex flex-col space-y-4 items-center">
+            <Link to="/" className="flex items-center space-x-1 hover:text-purple-400 border-b-[1px]">
               <span>Home</span>
-             
-            </a>
-            <a href="#" className="hover:text-purple-400">
+           
+            </Link>
+            <Link to="/about" className="hover:text-purple-400">
               About Us
-            </a>
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400">
-              <span>Features</span>
+            </Link>
+            <Link to="/events" className="flex items-center space-x-1 hover:text-purple-400">
+              <span>Events</span>
+            
+            </Link>
+            <Link to="/workshops" className="flex items-center space-x-1 hover:text-purple-400">
+              <span>Workshops</span>
              
-            </a>
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400">
-              <span>Projects</span>
+            </Link>
+            <Link to="/sponsors" className="flex items-center space-x-1 hover:text-purple-400">
+              <span>Sponsors</span>
              
-            </a>
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400">
-              <span>Pages</span>
-             
-            </a>
-            <a href="#" className="flex items-center space-x-1 hover:text-purple-400">
-              <span>Blog</span>
-             
-            </a>
-            <a href="#" className="hover:text-purple-400">
+            </Link>
+            
+            <Link to='/contact' className="hover:text-purple-400">
               Contact Us
-            </a>
-            <a
-              href="#"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 text-center"
-            >
-              Apply For IDO
-            </a>
+            </Link>
+           
           </div>
         </div>
       )}
