@@ -46,9 +46,9 @@ const EventRegistrationForm = ({ setSuccess, setIsModalOpen, eventID }) => {
     <div className="w-full flex items-center justify-center bg-gradient-to-r from-indigo-900 to-purple-900 rounded-xl">
       <div className="w-full bg-black bg-opacity-40 shadow-xl border border-blue-500 rounded-2xl p-6">
         <div className="flex justify-between">
-          <h2 className="text-2xl text-white font-bold text-center mb-4">
+          <h1 className="text-2xl text-white font-bold text-center mb-4">
             Event Registration
-          </h2>
+          </h1>
           <div className="close text-white text-3xl">
             <IoMdClose onClick={() => setIsModalOpen(false)} className="font-bold" />
           </div>

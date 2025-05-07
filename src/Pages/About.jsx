@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import AboutCard from "../components/AboutCard";
 import WebTeam from "../components/Teamcard";
 import Accordion from "../components/Accordion"; // Import the Accordion component
-
+import { Helmet } from "react-helmet";
 const About = () => {
   const aboutdata = [
     {
@@ -55,15 +55,58 @@ const About = () => {
 
   return (
     <div className=" min-h-screen">
+      <Helmet>
+        <title>About - College Event Management System</title>
+        <meta
+          name="description"
+          content="Learn about the College Event Management System, designed to make event planning and management more efficient for students and organizers."
+        />
+        <meta
+          name="keywords"
+          content="about college event management system, event planning software, event management system features"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://event-arch.vercel.app/about" />
+        {/* Open Graph Tags */}
+        <meta
+          property="og:title"
+          content="About - College Event Management System"
+        />
+        <meta
+          property="og:description"
+          content="Learn about the College Event Management System, designed to make event planning and management more efficient for students and organizers."
+        />
+        <meta
+          property="og:image"
+          content="https://event-arch.vercel.app/images/og-about.jpg"
+        />
+        <meta property="og:url" content="https://event-arch.vercel.app/about" />
+        <meta property="og:type" content="website" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About - College Event Management System"
+        />
+        <meta
+          name="twitter:description"
+          content="Learn about the College Event Management System, designed to make event planning and management more efficient for students and organizers."
+        />
+        <meta
+          name="twitter:image"
+          content="https://event-arch.vercel.app/images/twitter-about.jpg"
+        />
+      </Helmet>
+
       {/* Navbar */}
       <Navbar />
 
       {/* About Us Section */}
       <div className="flex justify-center">
-      <h3 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
-  About Us
-</h3>
-</div>
+        <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+          About Us
+        </h1>
+      </div>
       <div className="flex flex-wrap lg:flex-nowrap px-[30px] gap-[30px]  justify-center">
         {aboutdata.map((item, index) => (
           <AboutCard
@@ -79,10 +122,10 @@ const About = () => {
 
       {/* FAQ Section */}
       <div className="flex justify-center">
-      <h3 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] mb-[50px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
-  Frequently Asked Questions
-</h3>
-</div>
+        <h3 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] mb-[50px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+          Frequently Asked Questions
+        </h3>
+      </div>
       <div className="w-full max-w-3xl mx-auto px-4 mb-12">
         {faqs.map((faq, index) => (
           <Accordion
