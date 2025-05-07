@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify"; 
 import Workshopcard from "./Workshopcard";
 const Workshops = () => {
-    const API_URL = "http://localhost:5000/api"; 
+    const API_URL = "https://eventarch-backend.onrender.com/api"; 
     const [events, setEvents] = useState([]);
   const [isModalOpen,setIsModalOpen]=useState(false)
     const fetchEvents = async () => {

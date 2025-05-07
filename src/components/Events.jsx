@@ -6,7 +6,7 @@ import EventRegistrationForm from "./EventReg";
 import { ToastContainer } from "react-toastify";
 
 const Events = () => {
-  const API_URL = "http://localhost:5000/api";
+  const API_URL = "https://eventarch-backend.onrender.com/api";
   const [events, setEvents] = useState([]);
   const [success, setSuccess] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);

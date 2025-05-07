@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Allow all crawlers to index everything
+Sitemap: https://event-arch.vercel.app/sitemap.xml

@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/events"; // Updated base URL
+const API_URL = "https://eventarch-backend.onrender.com/api/events"; // Updated base URL
 
 const EventRegistrationForm = ({ setSuccess, setIsModalOpen, eventID }) => {
   const [formData, setFormData] = useState({
