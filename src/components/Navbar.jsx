@@ -16,7 +16,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           {/* Placeholder for the logo icon (you can replace with an actual image) */}
-          <img src={logo} className="h-16 w-15"/>
+          <img src={logo} className="h-16 w-15" loading="lazy"/>
           <h3 className="text-3xl font-semibold hidden md:block">Event <span className="text-pink-600">Architects</span></h3>
         </div>
 

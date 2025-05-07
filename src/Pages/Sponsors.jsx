@@ -124,9 +124,9 @@ const Sponsors = () => {
       <Navbar />
       <div className="sponsors-container">
         <div className="flex justify-center">
-          <h3 className="text-5xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
+          <h1 className="text-5xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] to-[#00f0ff] text-center font-bold pt-[90px] font-orbitron animate-neonGlow text-shadow-neon tracking-wide neon-heading ">
             Sponsors
-          </h3>
+          </h1>
         </div>
 
         {Object.entries(sponsorData.sponsors).map(([category, sponsors]) => (
@@ -144,13 +144,14 @@ const Sponsors = () => {
                 <div
                   key={index}
                   className="sponsor-card"
-                  style={{ backgroundImage: `url(${bgImage})` }} // Using your custom background image
+                  style={{ backgroundImage: `url(${bgImage})` }}
+                  loading="lazy" // Using your custom background image
                 >
                   <div className="sponsor-content">
                     <img
                       src={sponsor.logo}
                       alt={sponsor.companyName}
-                      className="sponsor-logo "
+                      className="sponsor-logo " loading="lazy"
                     />
                     <h3 className="sponsor-company">{sponsor.companyName}</h3>
                     <p className="sponsor-title">{sponsor.title}</p>

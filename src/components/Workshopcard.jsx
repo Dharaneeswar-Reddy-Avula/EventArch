@@ -6,7 +6,7 @@ const Workshopcard = ({ image, category, name, time, id, setIsModalOpen }) => {
     <div className="Eventcard mt-[-50px]">
       <div className="card" key={id}>
         <div className="card-banner">
-          <img src={image} alt={name} className="w-full h-auto rounded-lg" />
+          <img src={image} alt={name} className="w-full h-auto rounded-lg" loading="lazy" />
         </div>
         <div className="card-desc">
           <p className="card-date text-[20px]">{time}</p>

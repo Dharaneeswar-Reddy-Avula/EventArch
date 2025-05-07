@@ -25,7 +25,7 @@ const WebTeam = () => {
     <div
       className="task-card relative scale-[0.9] h-[419px] w-full md:h-[401px] px-[20px] md:w-[300px] 
                 group duration-150 after:absolute bg-cover bg-center z-[0] 
-                flex flex-col justify-start items-center rounded-xl overflow-hidden"
+                flex flex-col justify-start items-center rounded-xl overflow-hidden" 
       style={{
         backgroundImage: `url(${bgm})`,
       }}
@@ -39,7 +39,7 @@ const WebTeam = () => {
       <img
         src={image}
         alt={name}
-        className="absolute duration-150 bottom-0 group-hover:translate-x-[30px] z-10"
+        className="absolute duration-150 bottom-0 group-hover:translate-x-[30px] z-10" loading="lazy"
       />
       <div className="icons absolute left-[20px] bottom-[20px] gap-2 z-20">
         <div className="socialmedia flex flex-col gap-2 opacity-0 scale-y-0 transition-all duration-200 ease-in pl-1 group-hover:opacity-100 group-hover:scale-y-100 group-hover:animate-fold-out animate-fold-in">
