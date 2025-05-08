@@ -1,11 +1,19 @@
 {
-    "headers": [
-      {
-        "source": "/sitemap.xml",
-        "headers": [
-          { "key": "Content-Type", "value": "application/xml" }
-        ]
-      }
-    ]
-  }
-  
+  "headers": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "example.com"
+        }
+      ],
+      "headers" : [
+        {
+          "key" : "X-Robots-Tag",
+          "value" : "noindex"
+        }
+      ]
+    }
+  ]
+}
