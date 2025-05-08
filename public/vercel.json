@@ -26,6 +26,12 @@
           "value": "index, follow"
         }
       ]
+    },
+    {
+      "rewrites": [
+        { "source": "/(.*)", "destination": "/" }
+      ]
     }
+    
   ]
 }
