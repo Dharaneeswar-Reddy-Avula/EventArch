@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../store/authSlice"; // Adjust the import path
+import { logout } from "../store/AuthSlice"; // Adjust the import path
 
 const backendUrl = import.meta.env.VITE_API_BASE_URL;
 
