@@ -5,7 +5,11 @@ import Workshops from "../components/Workshops";
 import Events from "../components/Events";
 import Navbar from "../components/Navbar";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import HomeAbout from "../components/HomeAbout";
 const Home = () => {
+
   return (
     <div className="bg-[#12122d]">
       <Helmet>
@@ -16,7 +20,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="event management, college events, event planner, event registration, event tracker, college event organizer"
+          content="event Architects, event management, college events, event planner, event registration, event tracker, college event organizer"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://event-arch.vercel.app/" />
@@ -52,10 +56,12 @@ const Home = () => {
       </Helmet>
 
       <Navbar />
+      <HomeAbout/>
       <Workshops />
       <Events />
-
-      <Footer />
+<Footer/>
+      {/* <ReelContainer /> */}
+      
     </div>
   );
 };

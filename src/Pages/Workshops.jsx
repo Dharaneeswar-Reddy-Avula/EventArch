@@ -5,26 +5,32 @@ import Workshopcard from "../components/Workshopcard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import { useDispatch } from "react-redux";
+import { fetchWorkshops } from "../store/WorkshopSlice";
+import { useSelector } from "react-redux";
 const Workshops = () => {
-  const API_URL = "https://eventarch-backend.onrender.com/api";
-  const [events, setEvents] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const fetchEvents = async () => {
-    try {
-      const { data } = await axios.get(`${API_URL}/workshops`);
-      setEvents(data?.Workshops || data); // Adjust based on API response
-    } catch (error) {
-      toast.error("Error fetching events!");
-      console.error(
-        "Error fetching events:",
-        error.response?.data || error.message
-      );
-    }
-  };
+  // const API_URL = "https://eventarch-backend.onrender.com/api";
+    // const API_URL = import.meta.env.VITE_API_BASE_URL;
 
+  // const [events, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const fetchEvents = async () => {
+  //   try {
+  //     const { data } = await axios.get(`${API_URL}/workshops`);
+  //     setEvents(data?.Workshops || data); // Adjust based on API response
+  //   } catch (error) {
+  //     toast.error("Error fetching events!");
+  //     console.error(
+  //       "Error fetching events:",
+  //       error.response?.data || error.message
+  //     );
+  //   }
+  // };
+ const dispatch = useDispatch();
+ const {workshops,loading,error} = useSelector((state)=>state.workshops)
   useEffect(() => {
-    fetchEvents();
-  }, []);
+    dispatch(fetchWorkshops());
+  }, [dispatch]);
 
   return (
     <div>
@@ -84,15 +90,15 @@ const Workshops = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 w-fit mx-auto justify-items-center">
-          {events.length > 0 ? (
-            events.map((event) => (
+          {workshops.length > 0 ? (
+            workshops.map((workshop) => (
               <Workshopcard
-                key={event._id}
-                id={event._id}
-                image={event.image}
-                category={event.category}
-                name={event.name}
-                time={event.time}
+                key={workshop._id}
+                id={workshop._id}
+                image={workshop.image}
+                category={workshop.category}
+                name={workshop.name}
+                time={workshop.time} 
                 setIsModalOpen={setIsModalOpen}
               />
             ))

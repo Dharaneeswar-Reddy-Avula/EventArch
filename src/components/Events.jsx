@@ -4,35 +4,27 @@ import { toast } from "react-toastify";
 import EventCard from "./EventCard";
 import EventRegistrationForm from "./EventReg";
 import { ToastContainer } from "react-toastify";
-
+import { fetchEvents } from "../store/EventsSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 const Events = () => {
-  const API_URL = "https://eventarch-backend.onrender.com/api";
-  const [events, setEvents] = useState([]);
+  // const API_URL = "https://eventarch-backend.onrender.com/api";
+    // const API_URL = import.meta.env.VITE_API_BASE_URL;
+const dispatch = useDispatch()
   const [success, setSuccess] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState(null);
+  const { events, loading, error } = useSelector((state) => state.events);
 
-  const fetchEvents = async () => {
-    try {
-      const { data } = await axios.get(`${API_URL}/events`);
-      setEvents(data?.events || data);
-    } catch (error) {
-      toast.error("Error fetching events!");
-      console.error(
-        "Error fetching events:",
-        error.response?.data || error.message
-      );
-    }
-  };
-
+ 
   const openRegistrationForm = (id) => {
     setSelectedEventId(id);
     setIsModalOpen(true);
   };
 
   useEffect(() => {
-    fetchEvents();
-  }, []);
+    dispatch(fetchEvents());
+  }, [dispatch]);
 
   return (
     <div className="flex justify-center flex-col items-center">

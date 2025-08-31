@@ -7,34 +7,38 @@ import EventCard from "../components/EventCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import { fetchEvents } from "../store/EventsSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 const Events = () => {
-  const API_URL = "https://eventarch-backend.onrender.com/api";
-  const [events, setEvents] = useState([]);
-  const [success, setSuccess] = useState(false);
+  // const API_URL = "https://eventarch-backend.onrender.com/api";
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
+const dispatch=useDispatch()
+ const { events, loading, error } = useSelector((state) => state.events);  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState(null);
 
-  const fetchEvents = async () => {
-    try {
-      const { data } = await axios.get(`${API_URL}/events`);
-      setEvents(data?.events || data);
-    } catch (error) {
-      toast.error("Error fetching events!");
-      console.error(
-        "Error fetching events:",
-        error.response?.data || error.message
-      );
-    }
-  };
+  // const fetchEvents = async () => {
+  //   try {
+  //     const { data } = await axios.get(`${API_URL}/events`);
+  //     setEvents(data?.events || data);
+  //   } catch (error) {
+  //     toast.error("Error fetching events!");
+  //     console.error(
+  //       "Error fetching events:",
+  //       error.response?.data || error.message
+  //     );
+  //   }
+  // };
 
   const openRegistrationForm = (id) => {
     setSelectedEventId(id);
     setIsModalOpen(true);
   };
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+ useEffect(() => {
+    dispatch(fetchEvents());
+  }, [dispatch]);
 
   return (
     <div>
